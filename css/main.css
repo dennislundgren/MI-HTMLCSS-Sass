@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+main,
+header,
+nav,
+main section:first-child,
+main section:last-child,
+footer,
+.footer,
+.arrow {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+
+header {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 40px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+header nav span {
+  width: 60vw;
+}
+header nav a {
+  color: white;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.dropdown {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 80px;
+  width: 80px;
+}
+
+.btn {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  margin-top: 20px;
+  position: relative;
+}
+
+.btn::before {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(-10px);
+  position: absolute;
+}
+
+.btn::after {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+  transform: translateY(10px);
+  position: absolute;
+}
+
+.hidden-checkbox {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+}
+
+header {
+  display: none;
+}
+
+#menu:checked ~ header {
+  display: flex;
+}
+
+#menu:checked ~ .dropdown label .btn {
+  width: 0;
+}
+
+#menu:checked ~ .dropdown label .btn::before {
+  transform: rotate(45deg) translate(-14px, 14px);
+}
+
+#menu:checked ~ .dropdown label .btn::after {
+  transform: rotate(-45deg) translate(-14px, -14px);
+}
+
+main section:first-child {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 40px;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  background-image: url(../assets/negative-space-black-forest-dawn.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section:first-child span {
+  flex-grow: 1;
+}
+
+main section:last-child {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 40px;
+}
+main section:last-child .profile {
+  max-width: 500px;
+}
+main section:last-child h3 {
+  font-size: 2rem;
+  padding: 40px;
+  width: 100%;
+}
+main section:last-child h4 {
+  padding: 40px;
+}
+main section:last-child p {
+  font-size: 1rem;
+  padding: 40px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+main section:last-child p i {
+  font-size: 2rem;
+}
+main section:last-child .profile-pic {
+  width: 250px;
+}
+main section:last-child .profile-pic img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+footer {
+  color: #fff;
+  background-color: black;
+  padding: 70px;
+}
+footer .footer {
+  width: initial;
+}
+footer ul {
+  list-style-type: none;
+  margin-left: 0%;
+}
+
+.arrow {
+  width: 100%;
+  font-size: 2rem;
+}
+.arrow a {
+  color: inherit;
+  opacity: 0.7;
+  transition: all 0.15s ease;
+}
+.arrow a:hover {
+  opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .hidden,
+.dropdown {
+    display: none;
+  }
+
+  .profile {
+    width: 40vw;
+  }
+
+  header {
+    display: flex;
+  }
+
+  main section:last-child,
+header nav,
+footer,
+.footer {
+    flex-direction: row;
+    width: 100% !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

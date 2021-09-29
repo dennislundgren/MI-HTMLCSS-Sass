@@ -1,0 +1,220 @@
+// Deklarerat 2 padding-variabler för att enkelt justera indentering i element.
+$paddingSmall: 40px;
+$paddingLarge: $paddingSmall * 1.75;
+// Mixin för font. Används vid 3 tillfällen.
+@mixin fontP {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: $paddingSmall;
+}
+// Mixin för knappens design, ändrat vardera för sig med ::before och ::after.
+@mixin btnStyle {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+// Vill kunna indentera lätt med padding därav border-box.
+// Centrera allt som standard.
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-decoration: none;
+}
+// På följande ställen används flex.
+main,
+header,
+nav,
+main section:first-child,
+main section:last-child,
+footer,
+.footer,
+.arrow {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 30px;
+}
+// Nästlat design i header förutom knappen som ligger nedan.
+header {
+  @include fontP;
+  position: absolute;
+  background-color: rgba($color: #fff, $alpha: 0.2);
+  nav span {
+    width: 60vw;
+  }
+  nav a {
+    color: white;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+}
+// Ca. 50 rader för dropdown-menyn.
+// Satte hela objektet som absolut och positionerade den i hörnet.
+.dropdown {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 80px;
+  width: 80px;
+}
+// Första raden på hamburgaren, hämtat design med include från mixin.
+.btn {
+  @include btnStyle;
+  margin-top: 20px;
+  position: relative;
+}
+// Andra raden (beroende på hur man ser det).
+// Absolut positionerad mot första raden på både befor och after.
+.btn::before {
+  @include btnStyle;
+  transform: translateY(-10px);
+  position: absolute;
+}
+// Och tredje raden.
+.btn::after {
+  @include btnStyle;
+  transform: translateY(10px);
+  position: absolute;
+}
+// Har gjort checkboxen större, osynlig och positionerat den vid hamburgaren.
+// Z-index för att den alltid ska ligga högst upp.
+.hidden-checkbox {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+}
+// Gömt header i mobilläge.
+header {
+  display: none;
+}
+// Header visas då osynlig checkbox klickas i.
+// Något jag märkte var att :checked endast fungerar sekventiellt i html.
+// Elementet kan inte ändra något utanför sin förälder.
+#menu:checked ~ header {
+  display: flex;
+}
+// Mittenraden försvinner på hamburgaren.
+#menu:checked ~ .dropdown label .btn {
+  width: 0;
+}
+// Över raden roteras åt höger och förflyttas en bit åt vänster.
+#menu:checked ~ .dropdown label .btn::before {
+  transform: rotate(45deg) translate(-14px, 14px);
+}
+// Under raden roteras åt vänster och flyttas en bit åt vänster.
+#menu:checked ~ .dropdown label .btn::after {
+  transform: rotate(-45deg) translate(-14px, -14px);
+}
+// Lagt in bakgrundsbild som ser bra ut på samtliga skärmar med hjälp utav:
+// Height, width och background-repeat/position/size.
+// flex-grow på span-elementen för att få ned pilen på ett enktelt sätt i flex. Se html.
+main section:first-child {
+  @include fontP;
+  color: #fff;
+  height: 100vh;
+  width: 100%;
+  background-image: url(../assets/negative-space-black-forest-dawn.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  span {
+    flex-grow: 1;
+  }
+}
+// Nästlat en hel del i andra sektionen (about).
+// Endast mindre justeriringar rakt igenom.
+main section:last-child {
+  @include fontP;
+  .profile {
+    max-width: 500px;
+  }
+  h3 {
+    font-size: 2rem;
+    padding: $paddingSmall;
+    width: 100%;
+  }
+  h4 {
+    padding: $paddingSmall;
+  }
+  p {
+    font-size: 1rem;
+    padding: $paddingSmall;
+    background-color: lightgray;
+    border-radius: 10px;
+    i {
+      font-size: 2rem;
+    }
+  }
+  .profile-pic {
+    width: 250px;
+    img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba($color: #000000, $alpha: 0.5);
+      margin-bottom: 30px;
+    }
+  }
+}
+// Satte initial-värde på footer-klassen då den ska vara ospecificerad på mobila enheter.
+// Detta för att centrera innehållet där.
+footer {
+  color: #fff;
+  background-color: black;
+  padding: $paddingLarge;
+  .footer {
+    width: initial;
+  }
+  ul {
+    list-style-type: none;
+    margin-left: 0%;
+  }
+}
+// 100& width för att ta upp en hel rad själv i flex.
+// Valde color inherit för att använda samma färg i motsvarande sektioner.
+.arrow {
+  width: 100%;
+  font-size: 2rem;
+  a {
+    color: inherit;
+    opacity: 0.7;
+    transition: all 0.15s ease;
+  }
+  a:hover {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // Tar bort hamburgaren och checkboxen.
+  .hidden,
+  .dropdown {
+    display: none;
+  }
+  // Vill inte ta upp för mycket yta med profilerna.
+  .profile {
+    width: 40vw;
+  }
+  // Visar headern som vanligt i desktop-läge.
+  header {
+    display: flex;
+  }
+  // Satte 100% som important då footer-klassen tidigare initial-värde prioriteras över detta värde.
+  main section:last-child,
+  header nav,
+  footer,
+  .footer {
+    flex-direction: row;
+    width: 100% !important;
+  }
+}

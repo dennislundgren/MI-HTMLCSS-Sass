@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCSS Test</title>
+    <!-- Hämtar specifika ikoner med nedan länk. -->
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+
+    <input class="hidden-checkbox" type="checkbox" name="menu" id="menu" />
+    <div class="dropdown">
+      <label for="menu">
+        <span class="btn"></span>
+      </label>
+    </div>
+
+    <header>
+      <nav>
+        <!-- Använt span-element för att fylla utrymme. -->
+        <span></span>
+        <a href="#home">Hem</a>
+        <a href="#about">Om</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section id="home">
+        <!-- Liksom i header har jag även använt span här. -->
+        <span></span>
+        <h3>Welcome to nature</h3>
+        <p>A journey through time and sheep</p>
+        <p>To see how ...cotton ... is mage, made I mean...</p>
+        <span></span>
+        <div class="arrow">
+          <a href="#about"><i class="fas fa-arrow-alt-circle-down"></i></a>
+        </div>
+      </section>
+
+      <section id="about">
+
+        <h3>Träffa laget</h3>
+
+        <div class="profile">
+          <h4>Rakib</h4>
+          <div class="profile-pic">
+            <img src="assets/profiles/Rakib_Square.png" alt="Rakib" />
+          </div>
+          <p>
+            <i class="fas fa-quote-right"></i> Rakib är vår vassaste node-utvecklare och håller ständigt ett öga
+            på nya tekniker
+          </p>
+        </div>
+
+        <div class="profile">
+          <h4>Alexandra</h4>
+          <div class="profile-pic">
+            <img src="assets/profiles/Alexandra_Square.png" alt="Alexandra" />
+          </div>
+          <p>
+            <i class="fas fa-quote-right"></i> Alexandra håller reda på alla överallt och ser till att det flyter
+          </p>
+        </div>
+        <div class="profile">
+
+          <h4>Lasse</h4>
+          <div class="profile-pic">
+            <img src="assets/profiles/NoPerson_Square.png" alt="Lasse" />
+          </div>
+          <p>
+            <i class="fas fa-quote-right"></i> Gör överiga saker... mestadels...
+          </p>
+        </div>
+        <div class="profile">
+          
+          <h4>Sebastian</h4>
+          <div class="profile-pic">
+            <img src="assets/profiles/Sebastian_Square.png" alt="Sebastian" />
+          </div>
+          <p>
+            <i class="fas fa-quote-right"></i> En av våra utbildare som har stor erfarenhet av ganska många saker
+          </p>
+        </div>
+          <div class="arrow">
+            <a href="#contact"><i class="fas fa-arrow-alt-circle-down"></i></a>
+          </div>
+      </section>
+
+    </main>
+
+    <footer id="contact">
+      <div class="footer">
+      <ul>
+        <li>Tegel Consulting AB</li>
+        <li>Agatvägen 18</li>
+        <li>168 60 Bromma</li>
+      </ul>
+      <ul>
+        <li>info at tegelconsulting.se</li>
+        <li>070-123 456 78</li>
+      </ul>
+      <ul class="fa-ul">
+        <li>
+          <span class="fa-li"><i class="fab fa-instagram"></i></span> Instagram
+        </li>
+        <li>
+          <span class="fa-li"><i class="fab fa-twitter"></i></span>Twitter
+        </li>
+        <li>
+          <span class="fa-li"><i class="fab fa-facebook"></i></span>Facebook
+        </li>
+      </ul>
+    </div>
+    </footer>
+  </body>
+</html>
