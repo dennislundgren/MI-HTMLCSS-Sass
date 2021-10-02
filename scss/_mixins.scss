@@ -1,0 +1,17 @@
+@import "_variables.scss";
+// Mixin för font. Används vid 3 tillfällen.
+@mixin fontP {
+  font-size: 1.25rem;
+  text-align: center;
+  padding: $paddingSmall;
+}
+// Mixin för knappens design, ändrat vardera för sig med ::before och ::after.
+@mixin btnStyle {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}

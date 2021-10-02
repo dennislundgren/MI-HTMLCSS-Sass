@@ -1,8 +1,7 @@
 * {
   box-sizing: border-box;
   margin: 0 auto;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 main,
 header,
@@ -18,33 +17,27 @@ footer,
   justify-content: center;
   align-items: center;
   width: 100%;
-  gap: 30px;
-}
+  gap: 30px; }
 
 header {
   font-size: 1.25rem;
   text-align: center;
   padding: 40px;
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-header nav span {
-  width: 60vw;
-}
-header nav a {
-  color: white;
-}
-header nav a:hover {
-  text-decoration: underline;
-}
+  background-color: rgba(255, 255, 255, 0.2); }
+  header nav span {
+    width: 60vw; }
+  header nav a {
+    color: white; }
+  header nav a:hover {
+    text-decoration: underline; }
 
 .dropdown {
   position: absolute;
   top: 20px;
   right: 20px;
   height: 80px;
-  width: 80px;
-}
+  width: 80px; }
 
 .btn {
   display: block;
@@ -55,8 +48,7 @@ header nav a:hover {
   background-color: white;
   transition: all 0.2s ease-in-out;
   margin-top: 20px;
-  position: relative;
-}
+  position: relative; }
 
 .btn::before {
   display: block;
@@ -67,8 +59,7 @@ header nav a:hover {
   background-color: white;
   transition: all 0.2s ease-in-out;
   transform: translateY(-10px);
-  position: absolute;
-}
+  position: absolute; }
 
 .btn::after {
   display: block;
@@ -79,8 +70,7 @@ header nav a:hover {
   background-color: white;
   transition: all 0.2s ease-in-out;
   transform: translateY(10px);
-  position: absolute;
-}
+  position: absolute; }
 
 .hidden-checkbox {
   position: absolute;
@@ -88,28 +78,22 @@ header nav a:hover {
   opacity: 0;
   width: 80px;
   height: 80px;
-  z-index: 1;
-}
+  z-index: 1; }
 
 header {
-  display: none;
-}
+  display: none; }
 
 #menu:checked ~ header {
-  display: flex;
-}
+  display: flex; }
 
 #menu:checked ~ .dropdown label .btn {
-  width: 0;
-}
+  width: 0; }
 
 #menu:checked ~ .dropdown label .btn::before {
-  transform: rotate(45deg) translate(-14px, 14px);
-}
+  transform: rotate(45deg) translate(-14px, 14px); }
 
 #menu:checked ~ .dropdown label .btn::after {
-  transform: rotate(-45deg) translate(-14px, -14px);
-}
+  transform: rotate(-45deg) translate(-14px, -14px); }
 
 main section:first-child {
   font-size: 1.25rem;
@@ -121,94 +105,68 @@ main section:first-child {
   background-image: url(../assets/negative-space-black-forest-dawn.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-}
-main section:first-child span {
-  flex-grow: 1;
-}
+  background-size: cover; }
+  main section:first-child span {
+    flex-grow: 1; }
 
 main section:last-child {
   font-size: 1.25rem;
   text-align: center;
-  padding: 40px;
-}
-main section:last-child .profile {
-  max-width: 500px;
-}
-main section:last-child h3 {
-  font-size: 2rem;
-  padding: 40px;
-  width: 100%;
-}
-main section:last-child h4 {
-  padding: 40px;
-}
-main section:last-child p {
-  font-size: 1rem;
-  padding: 40px;
-  background-color: lightgray;
-  border-radius: 10px;
-}
-main section:last-child p i {
-  font-size: 2rem;
-}
-main section:last-child .profile-pic {
-  width: 250px;
-}
-main section:last-child .profile-pic img {
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  margin-bottom: 30px;
-}
+  padding: 40px; }
+  main section:last-child .profile {
+    max-width: 500px; }
+  main section:last-child h3 {
+    font-size: 2rem;
+    padding: 40px;
+    width: 100%; }
+  main section:last-child h4 {
+    padding: 40px; }
+  main section:last-child p {
+    font-size: 1rem;
+    padding: 40px;
+    background-color: lightgray;
+    border-radius: 10px; }
+    main section:last-child p i {
+      font-size: 2rem; }
+  main section:last-child .profile-pic {
+    width: 250px; }
+    main section:last-child .profile-pic img {
+      width: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      margin-bottom: 30px; }
 
 footer {
   color: #fff;
   background-color: black;
-  padding: 70px;
-}
-footer .footer {
-  width: initial;
-}
-footer ul {
-  list-style-type: none;
-  margin-left: 0%;
-}
+  padding: 70px; }
+  footer .footer {
+    width: initial; }
+  footer ul {
+    list-style-type: none;
+    margin-left: 0%; }
 
 .arrow {
   width: 100%;
-  font-size: 2rem;
-}
-.arrow a {
-  color: inherit;
-  opacity: 0.7;
-  transition: all 0.15s ease;
-}
-.arrow a:hover {
-  opacity: 1;
-}
+  font-size: 2rem; }
+  .arrow a {
+    color: inherit;
+    opacity: 0.7;
+    transition: all 0.15s ease; }
+  .arrow a:hover {
+    opacity: 1; }
 
 @media screen and (min-width: 768px) {
   .hidden,
-.dropdown {
-    display: none;
-  }
-
+  .dropdown {
+    display: none; }
   .profile {
-    width: 40vw;
-  }
-
+    width: 40vw; }
   header {
-    display: flex;
-  }
-
+    display: flex; }
   main section:last-child,
-header nav,
-footer,
-.footer {
+  header nav,
+  footer,
+  footer .footer {
     flex-direction: row;
-    width: 100% !important;
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
+    width: 100%; } }
